@@ -91,7 +91,7 @@ export function Footer() {
                             </Link>
                         </div>
                         <div className="pt-4">
-                            <p className="text-xs text-muted-foreground">© 2024 Craft UI. All rights reserved.</p>
+                            <p className="text-xs text-muted-foreground">© 2026 Craft UI. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
