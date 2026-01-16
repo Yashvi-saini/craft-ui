@@ -42,9 +42,9 @@ export default async function CategoryPage({ params }: PageProps) {
             </div>
         )
     }
-// means we have components in this category
-    const blocksWithContent = await Promise.all(categoryData.blocks.map(async (block: any) => {
-        const filesWithContent = await Promise.all(block.files.map(async (file: any) => {
+    // we have components in this category
+    const blocksWithContent = await Promise.all(categoryData.blocks.map(async (block) => {
+        const filesWithContent = await Promise.all(block.files.map(async (file) => {
             const filePath = path.join(process.cwd(), file.path)
             try {
                 const content = await fs.readFile(filePath, "utf-8")
@@ -82,7 +82,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     </div>
 
                     <div className="grid gap-12">
-                        {blocksWithContent.map((block: any) => {
+                        {blocksWithContent.map((block) => {
                             const Component = block.component
                             return (
                                 <div key={block.name} className="space-y-4">

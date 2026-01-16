@@ -29,17 +29,16 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { title: "Auth", count: "2 Components", href: "/blocks/auth", icon: Shield },
+  { title: "Auth", count: "3 Components", href: "/blocks/auth", icon: Shield },
   { title: "Header", count: "1 Component", href: "/blocks/header", icon: LayoutTemplate },
-  { title: "Footer", count: "1 Component", href: "/blocks/footer", icon: Menu },
-  { title: "Contact", count: "0 Components", href: "/blocks/contact", icon: Users },
-  { title: "CTA", count: "0 Components", href: "/blocks/cta", icon: MousePointer2 },
-  { title: "FAQs", count: "0 Components", href: "/blocks/faqs", icon: HelpCircle },
-  { title: "Feature", count: "0 Components", href: "/blocks/feature", icon: Box },
-  { title: "Form", count: "0 Components", href: "/blocks/form", icon: Type },
-  { title: "Hero", count: "0 Components", href: "/blocks/hero", icon: ImageIcon },
-  { title: "Pricing", count: "0 Components", href: "/blocks/pricing", icon: CreditCard },
-  { title: "Testimonial", count: "0 Components", href: "/blocks/testimonial", icon: MessageSquare },
+  { title: "Footer", count: "2 Components", href: "/blocks/footer", icon: Menu },
+  { title: "Contact", count: "1 Component", href: "/blocks/contact", icon: Users },
+  { title: "CTA", count: "1 Component", href: "/blocks/cta", icon: MousePointer2 },
+  { title: "FAQs", count: "1 Component", href: "/blocks/faqs", icon: HelpCircle },
+  { title: "Feature", count: "1 Component", href: "/blocks/feature", icon: Box },
+  { title: "Hero", count: "1 Component", href: "/blocks/hero", icon: ImageIcon },
+  { title: "Pricing", count: "1 Component", href: "/blocks/pricing", icon: CreditCard },
+  { title: "Testimonial", count: "1 Component", href: "/blocks/testimonial", icon: MessageSquare },
 ]
 
 export default function Home() {
@@ -52,7 +51,7 @@ export default function Home() {
 
       <div className="flex-1">
         <section className="mx-auto flex flex-col items-center gap-4 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 px-4 text-center">
-         
+
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
             Beautifully crafted <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 to-zinc-500 dark:from-zinc-100 dark:to-zinc-400">

@@ -2,9 +2,12 @@
   "name": "craft-ui",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "craft-ui": "./cli/index.ts"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsx scripts/build-registry.ts && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -26,11 +29,18 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "fs-extra": "^11.3.3",
+    "node-fetch": "^3.3.2",
+    "ora": "^9.0.0",
+    "prompts": "^2.4.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
