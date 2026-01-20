@@ -1,11 +1,16 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowRight } from "lucide-react"
+import { Eye, EyeOff, Github } from "lucide-react"
 
 export function LoginSplit() {
+    const [isVisible, setIsVisible] = useState(false)
+    const toggleVisibility = () => setIsVisible(!isVisible)
+
     return (
         <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
             <div className="flex items-center justify-center py-12">
@@ -36,14 +41,55 @@ export function LoginSplit() {
                                     Forgot your password?
                                 </Link>
                             </div>
-                            <Input id="password" type="password" required />
+                            <div className="relative">
+                                <Input
+                                    id="password"
+                                    type={isVisible ? "text" : "password"}
+                                    required
+                                />
+                                <button
+                                    className="absolute inset-y-0 right-0 flex items-center justify-center px-3 text-muted-foreground/80 hover:text-foreground"
+                                    onClick={toggleVisibility}
+                                    type="button"
+                                    aria-label={isVisible ? "Hide password" : "Show password"}
+                                >
+                                    {isVisible ? (
+                                        <EyeOff className="h-4 w-4" aria-hidden="true" />
+                                    ) : (
+                                        <Eye className="h-4 w-4" aria-hidden="true" />
+                                    )}
+                                </button>
+                            </div>
                         </div>
                         <Button type="submit" className="w-full">
                             Login
                         </Button>
-                        <Button variant="outline" className="w-full">
-                            Login with Google
-                        </Button>
+                        <div className="relative">
+                            <div className="absolute inset-0 flex items-center">
+                                <span className="w-full border-t" />
+                            </div>
+                            <div className="relative flex justify-center text-xs uppercase">
+                                <span className="bg-background px-2 text-muted-foreground">
+                                    Or continue with
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <Button variant="outline" className="w-full gap-2">
+                                <Github className="h-4 w-4" />
+                                GitHub
+                            </Button>
+                            <Button variant="outline" className="w-full gap-2">
+                                <Image
+                                    src="/google.png"
+                                    alt="Google"
+                                    width={16}
+                                    height={16}
+                                    className="h-4 w-4"
+                                />
+                                Google
+                            </Button>
+                        </div>
                     </div>
                     <div className="mt-4 text-center text-sm">
                         Don&apos;t have an account?{" "}
