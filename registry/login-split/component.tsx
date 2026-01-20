@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -53,9 +54,13 @@ export function LoginSplit() {
                 </div>
             </div>
             <div className="hidden bg-muted lg:block">
-                <div className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale bg-zinc-900 flex items-center justify-center text-zinc-500">
-                    <span className="text-xl font-medium">Image Placeholder</span>
-                </div>
+                <Image
+                    src="/image.png"
+                    alt="Login"
+                    width="1620"
+                    height="1000"
+                    className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                />
             </div>
         </div>
     )
